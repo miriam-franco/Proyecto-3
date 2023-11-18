@@ -29,19 +29,32 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_platillos")
                 }
             }
         });
-// Cracion de datos de tabla//
-        tbody.innerHTML ="";
+        // Cracion de datos de tabla//
+        tbody.innerHTML = "";
         labels.forEach((label, index) => {
             console.log(index);
-            tbody.innerHTML += `
-            <tr>
-                <th>${index + 1}</th>
-                <td>${label}</td>
-                <td>${data[index]}</td>
-            </tr>
-            `;
+            //  tbody.innerHTML += `
+            // <tr class="table-danger">
+            // <td>${index + 1}</td>
+            // <td>${label}</td>
+            // <td>${data[index]}</td>
+            // </tr>
+            // `; 
+            const tr = document.createElement("tr");
+            if (data[index]>50){
+                tr.classList.add ("table-danger");
+            }
+
+        
+            tr.innerHTML = ` 
+            <td>${index + 1}</td>
+            <td>${label}</td>
+            <td>${data[index]}</td>
+        `;
+        tbody.appendChild(tr);
+
         });
-        onsole.log("Platillo", labels[0]);
+        console.log("Platillo", labels[0]);
         console.log("Promedio", data[0]);
 
         console.log("Platillo", labels[1]);

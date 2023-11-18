@@ -5,4 +5,11 @@
 *{
     background-color: rgb(19, 19, 20);
   }
-  
+
+  .disclaimer {
+     color:rgb(219, 75, 75)
+  }
+  .tabla {
+    color: rgb(104, 197, 177);
+    text-align: center ;
+  }
