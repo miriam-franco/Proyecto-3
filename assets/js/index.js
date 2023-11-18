@@ -12,13 +12,32 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_platillos")
 
         //creación de gráfica//
         new Chart(ctx, {
-            type: 'pie',
+            type: 'bar',
+            
             data: {
                 labels: labels,
                 datasets: [{
                     label: 'Promedio ventas',
                     data: data,
-                    borderWidth: 1
+                    borderWidth: 2,
+                    borderColor: [
+                    "#33FFF1",
+                    "#3344FF",
+                    "#3795CE",
+                    "#75CE37",
+                    "#8E3ADB",
+                    "#E692E8",
+
+                ],
+                backgroundColor: [
+                    "#33FFF1",
+                    "#3344FF",
+                    "#3795CE",
+                    "#75CE37",
+                    "#8637CE",
+                    "#E692E8",
+                ]
+
                 }]
             },
             options: {
@@ -29,7 +48,7 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_platillos")
                 }
             }
         });
-        // Cracion de datos de tabla//
+        // Creación de datos de tabla//
         tbody.innerHTML = "";
         labels.forEach((label, index) => {
             console.log(index);
@@ -43,6 +62,7 @@ fetch("https://dev4humans.com.mx/api/Clases/ventas_platillos")
             const tr = document.createElement("tr");
             if (data[index]>50){
                 tr.classList.add ("table-danger");
+                tr.classList.add ("fw-bold");
             }
 
         
